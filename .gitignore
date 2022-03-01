@@ -1,3 +1,15 @@
+# Project files
+**/.DS_Store
+**/.idea/
+# Datatypes
+*.csv
+*.parquet
+*.sas7bdat
+
+# Metadata files
+*.log
+*.tmp
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
