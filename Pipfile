@@ -4,13 +4,20 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-pytest = "*"
 numpy = "*"
 pandas = "*"
-black = "*"
-isort = "*"
+toml = "*"
 
 [dev-packages]
+black = "==21.9b0"  # need to pin the version because of prerelease
+isort = "*"
+pytest = "*"
+pytest-cov = "*"
+pytest-mock = "*"
+sphinx = "*"
+sphinx-autodoc-defaultargs = "*"
+sphinx-autodoc-typehints = "*"
+sphinx-rtd-theme = "*"
 
 [requires]
 python_version = "3.8"
