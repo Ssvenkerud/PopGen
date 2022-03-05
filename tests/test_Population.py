@@ -50,6 +50,8 @@ def test_logger(caplog):
 
 def test_generate():
     config = Population()
-    config.set_parameters(5)
-    config.generate()
+    config.set_parameters(
+        5,
+    )
+    config.generate({"int": "int"})
     assert len(config.population) == 5
