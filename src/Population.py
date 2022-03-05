@@ -1,9 +1,10 @@
 import logging
 
 import pandas as pd
+from src.simple_generator import SimpleGenerator
 
 
-class Population_config:
+class Population:
     """
     Class holding the population information
     """
@@ -34,4 +35,5 @@ class Population_config:
             self.n = int(0)
 
     def generate(self):
-        self.population = pd.DataFrame(range(0,5))
+        model = SimpleGenerator(self.n)
+        self.population = model.run()
