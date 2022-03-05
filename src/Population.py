@@ -32,3 +32,6 @@ class Population_config:
                 " to 0"
             )
             self.n = int(0)
+
+    def generate(self):
+        self.population = pd.DataFrame(range(0,5))
