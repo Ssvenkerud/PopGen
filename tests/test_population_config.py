@@ -1,6 +1,8 @@
-import pandas as pd
-import numpy as np
 import logging
+
+import numpy as np
+import pandas as pd
+
 from src.Population_config import Population_config
 
 
