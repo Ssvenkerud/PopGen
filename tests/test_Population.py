@@ -10,7 +10,7 @@ def test_population_classinit():
     assert isinstance(Population(), Population)
     population_init = Population()
     assert isinstance(population_init, Population)
-    assert hasattr(population_init, "population")
+    assert hasattr(population_init, "data")
     assert isinstance(population_init.data, pd.DataFrame)
     assert population_init.data.empty
     assert hasattr(population_init, "n")
@@ -33,7 +33,7 @@ def test_get_population():
 
 
 def test_set_population_param_n_typing():
-    number_of_people = [5, 10000, None, np.nan, "10", 15.3]
+    number_of_people = [5, 10000, "10", 15.3]
     for n in number_of_people:
         pop = Population()
         pop.set_parameters(n)
