@@ -12,6 +12,9 @@ class Population:
     def __init__(self):
         self.population = pd.DataFrame()
         self.n = 0
+        self.schema = None
+        #TODO: Parameter for generation model
+        #TODO: Change to initialise with parameters
 
     def get_population(self):
         """
@@ -24,6 +27,7 @@ class Population:
         method to sett the parameters for the populations
         :param number_of_people: int
         """
+        #TODO: Rewrite to be an update function, with rerun
         try:
             self.n = int(number_of_people)
             logging.info(f"number_of_people set to: {number_of_people}")
@@ -35,5 +39,5 @@ class Population:
             self.n = int(0)
 
     def generate(self):
-        model = SimpleGenerator(self.n)
+        model = SimpleGenerator(self.n, self.schema)
         self.population = model.run()
