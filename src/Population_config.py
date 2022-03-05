@@ -1,10 +1,12 @@
 import pandas as pd
 import logging
 
-class Population_config():
+
+class Population_config:
     """
     Class holding the population information
     """
+
     def __init__(self):
         self.population = pd.DataFrame()
         self.n = 0
@@ -23,8 +25,8 @@ class Population_config():
         try:
             self.n = int(number_of_people)
         except:
-            logging.warning(f"number_of_people parameter {number_of_people} not convertable, sett to 0")
+            logging.warning(
+                f"number_of_people parameter {number_of_people} not convertable, sett"
+                " to 0"
+            )
             self.n = int(0)
-
-
-
