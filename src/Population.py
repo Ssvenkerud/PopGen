@@ -1,6 +1,7 @@
 import logging
 
 import pandas as pd
+
 from src.simple_generator import SimpleGenerator
 
 
