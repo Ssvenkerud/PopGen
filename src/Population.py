@@ -11,7 +11,7 @@ class Population:
     """
 
     def __init__(self):
-        self.population = pd.DataFrame()
+        self.data = pd.DataFrame()
         self.n = 0
         self.schema = None
         # TODO: Parameter for generation model
@@ -21,7 +21,7 @@ class Population:
         """
         function for returning the population
         """
-        return self.population
+        return self.data
 
     def set_parameters(self, number_of_people: int = 0):
         """
@@ -32,7 +32,7 @@ class Population:
         try:
             self.n = int(number_of_people)
             logging.info(f"number_of_people set to: {number_of_people}")
-        except:
+        except(ValueError):
             logging.warning(
                 f"number_of_people parameter {number_of_people} not convertable, sett"
                 " to 0"
@@ -41,4 +41,4 @@ class Population:
 
     def generate(self, schema):
         model = SimpleGenerator(self.n, schema)
-        self.population = model.run()
+        self.data = model.run()

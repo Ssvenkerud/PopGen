@@ -6,13 +6,13 @@ import pandas as pd
 from src.Population import Population
 
 
-def test_Population_classinit():
+def test_population_classinit():
     assert isinstance(Population(), Population)
     population_init = Population()
     assert isinstance(population_init, Population)
     assert hasattr(population_init, "population")
-    assert isinstance(population_init.population, pd.DataFrame)
-    assert population_init.population.empty
+    assert isinstance(population_init.data, pd.DataFrame)
+    assert population_init.data.empty
     assert hasattr(population_init, "n")
     assert type(population_init.n) == int
 
@@ -54,4 +54,4 @@ def test_generate():
         5,
     )
     config.generate({"int": "int"})
-    assert len(config.population) == 5
+    assert len(config.data) == 5

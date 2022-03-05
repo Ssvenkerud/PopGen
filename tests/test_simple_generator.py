@@ -6,11 +6,11 @@ from src.simple_generator import SimpleGenerator
 def test_simple_generater_init():
     population_size = 5
     schema = {"integer": "int"}
-    SimpleGenerator_init = SimpleGenerator(population_size, schema)
-    assert isinstance(SimpleGenerator_init, SimpleGenerator)
-    assert hasattr(SimpleGenerator_init, "population_size")
-    assert hasattr(SimpleGenerator_init, "schema")
-    assert hasattr(SimpleGenerator_init, "data")
+    simplegenerator_init = SimpleGenerator(population_size, schema)
+    assert isinstance(simplegenerator_init, SimpleGenerator)
+    assert hasattr(simplegenerator_init, "population_size")
+    assert hasattr(simplegenerator_init, "schema")
+    assert hasattr(simplegenerator_init, "data")
 
 
 def test_run():
