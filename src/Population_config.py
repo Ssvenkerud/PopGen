@@ -24,6 +24,7 @@ class Population_config:
         """
         try:
             self.n = int(number_of_people)
+            logging.info(f"number_of_people set to: {number_of_people}")
         except:
             logging.warning(
                 f"number_of_people parameter {number_of_people} not convertable, sett"
