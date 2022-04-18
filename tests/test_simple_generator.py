@@ -44,6 +44,7 @@ def test_float_column():
     assert max(result["float"]) <= 1
     assert min(result["float"]) >= 0
 
+
 def test_categorical_column():
     population_size = 5
     schema = {"cat": "categorical"}
@@ -53,4 +54,3 @@ def test_categorical_column():
     assert type(result) == dict
     assert random.choice(result["cat"]) in categories
     assert random.choice(result["cat"]) != "four"
-
