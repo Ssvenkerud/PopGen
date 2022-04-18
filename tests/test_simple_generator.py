@@ -1,3 +1,5 @@
+import random
+
 import pandas as pd
 
 from src.simple_generator import SimpleGenerator
@@ -41,3 +43,14 @@ def test_float_column():
     assert type(result) == dict
     assert max(result["float"]) <= 1
     assert min(result["float"]) >= 0
+
+def test_categorical_column():
+    population_size = 5
+    schema = {"cat": "categorical"}
+    pop = SimpleGenerator(population_size, schema)
+    categories = ["one", "two", "three"]
+    result = pop._categorical_column("cat", categories)
+    assert type(result) == dict
+    assert random.choice(result["cat"]) in categories
+    assert random.choice(result["cat"]) != "four"
+

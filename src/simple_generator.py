@@ -41,6 +41,15 @@ class SimpleGenerator:
 
         return column
 
+    def _categorical_column(self, column_name:str, categories:list):
+        column_value = []
+        for _ in range(0, self.population_size):
+            n = random.choice(categories)
+            column_value.append(n)
+        column = {column_name: column_value}
+
+        return column
+
     def run(self):
         data = {}
         for k, v in self.schema.items():
