@@ -53,7 +53,7 @@ def test_categorical_column():
     population_size = 5
     schema = {"cat": "categorical"}
     pop = SimpleGenerator(population_size, schema)
-    categories = ["one", "two", "three"]
+    categories = ["ape", "gorilla", "monkey"]
     result = pop._categorical_column("cat", categories)
     assert type(result) == dict
     assert random.choice(result["cat"]) in categories
