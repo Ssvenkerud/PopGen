@@ -18,7 +18,7 @@ def test_simple_generater_init():
 
 def test_run():
     population_size = 5
-    schema = {"integer": "int", "float": "float"}
+    schema = {"integer": "int", "float": "float", "category": "cat"}
     pop = SimpleGenerator(population_size, schema)
     result = pop.run()
     assert len(result) == population_size
@@ -26,6 +26,7 @@ def test_run():
     assert result.columns.values.tolist() == [*schema]
     assert result["integer"].dtype == numpy.dtype('int64')
     assert result["float"].dtype == numpy.dtype('float64')
+    assert type(result["category"].values.all()) == str
 
 
 def test_integer_column():
