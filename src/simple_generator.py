@@ -42,7 +42,9 @@ class SimpleGenerator:
         return column
 
     def _categorical_column(self, column_name: str, categories: list = None):
+        logging.info(f"creating categorical column: {column_name}")
         if categories is None:
+            logging.debug(f"no cathegorical values provided")
             categories = ["one", "two", "three"]
         column_value = []
         for _ in range(0, self.population_size):
