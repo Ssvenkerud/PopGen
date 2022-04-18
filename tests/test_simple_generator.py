@@ -33,8 +33,8 @@ def test_integer_column():
     population_size = 5
     schema = {"integer": "int"}
     pop = SimpleGenerator(population_size, schema)
-    result = pop._integer_column("integer", 0, 100)
-    assert type(result) == dict
+    result = pop.run()
+    assert isinstance(result, pd.DataFrame)
     assert max(result["integer"]) <= 100
     assert min(result["integer"]) >= 0
 
@@ -43,8 +43,8 @@ def test_float_column():
     population_size = 5
     schema = {"float": "float"}
     pop = SimpleGenerator(population_size, schema)
-    result = pop._float_column("float", 0, 1)
-    assert type(result) == dict
+    result = pop.run()
+    assert isinstance(result, pd.DataFrame)
     assert max(result["float"]) <= 1
     assert min(result["float"]) >= 0
 
@@ -53,8 +53,5 @@ def test_categorical_column():
     population_size = 5
     schema = {"cat": "categorical"}
     pop = SimpleGenerator(population_size, schema)
-    categories = ["ape", "gorilla", "monkey"]
-    result = pop._categorical_column("cat", categories)
-    assert type(result) == dict
-    assert random.choice(result["cat"]) in categories
-    assert random.choice(result["cat"]) != "four"
+    result = pop.run()
+    assert isinstance(result, pd.DataFrame)
