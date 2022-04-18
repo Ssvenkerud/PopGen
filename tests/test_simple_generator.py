@@ -16,7 +16,7 @@ def test_simple_generater_init():
     assert hasattr(simplegenerator_init, "data")
 
 
-def test_run():
+def test_multi_column_generation():
     population_size = 5
     schema = {"integer": "int", "float": "float", "category": "cat"}
     pop = SimpleGenerator(population_size, schema)
@@ -29,7 +29,7 @@ def test_run():
     assert type(result["category"].values.all()) == str
 
 
-def test_integer_column():
+def test_integer_column_type():
     population_size = 5
     schema = {"integer": "int"}
     pop = SimpleGenerator(population_size, schema)
@@ -38,18 +38,33 @@ def test_integer_column():
     assert max(result["integer"]) <= 100
     assert min(result["integer"]) >= 0
 
+def test_integer_column_min_max_value():
+    population_size = 5
+    schema = {"integer": "int"}
+    pop = SimpleGenerator(population_size, schema)
+    result = pop.run()
+    assert max(result["integer"]) <= 100
+    assert min(result["integer"]) >= 0
 
-def test_float_column():
+
+
+def test_float_column_type():
     population_size = 5
     schema = {"float": "float"}
     pop = SimpleGenerator(population_size, schema)
     result = pop.run()
     assert isinstance(result, pd.DataFrame)
+
+def test_float_column_min_max_value():
+    population_size = 5
+    schema = {"float": "float"}
+    pop = SimpleGenerator(population_size, schema)
+    result = pop.run()
     assert max(result["float"]) <= 1
     assert min(result["float"]) >= 0
 
 
-def test_categorical_column():
+def test_categorical_column_type():
     population_size = 5
     schema = {"cat": "categorical"}
     pop = SimpleGenerator(population_size, schema)
