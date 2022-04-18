@@ -1,7 +1,7 @@
 import random
 
-import pandas as pd
 import numpy
+import pandas as pd
 
 from src.simple_generator import SimpleGenerator
 
@@ -24,8 +24,8 @@ def test_run():
     assert len(result) == population_size
     assert isinstance(result, pd.DataFrame)
     assert result.columns.values.tolist() == [*schema]
-    assert result["integer"].dtype == numpy.dtype('int64')
-    assert result["float"].dtype == numpy.dtype('float64')
+    assert result["integer"].dtype == numpy.dtype("int64")
+    assert result["float"].dtype == numpy.dtype("float64")
     assert type(result["category"].values.all()) == str
 
 
