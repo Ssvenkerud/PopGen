@@ -59,6 +59,9 @@ class SimpleGenerator:
             elif v == "float":
                 col = self._float_column(k)
                 data.update(col)
+            elif v == "cat":
+                col = self._categorical_column(k)
+                data.update(col)
 
         self.data = pd.DataFrame.from_dict(data)
 
