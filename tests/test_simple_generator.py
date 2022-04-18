@@ -38,6 +38,7 @@ def test_integer_column_type():
     assert max(result["integer"]) <= 100
     assert min(result["integer"]) >= 0
 
+
 def test_integer_column_min_max_value():
     population_size = 5
     schema = {"integer": "int"}
@@ -47,13 +48,13 @@ def test_integer_column_min_max_value():
     assert min(result["integer"]) >= 0
 
 
-
 def test_float_column_type():
     population_size = 5
     schema = {"float": "float"}
     pop = SimpleGenerator(population_size, schema)
     result = pop.run()
     assert isinstance(result, pd.DataFrame)
+
 
 def test_float_column_min_max_value():
     population_size = 5
