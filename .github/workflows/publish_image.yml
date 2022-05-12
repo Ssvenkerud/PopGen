@@ -1,1 +1,14 @@
+name: Publish-image
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  ci-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: publish image
+        run: echo "this is a dummy end point"
 
