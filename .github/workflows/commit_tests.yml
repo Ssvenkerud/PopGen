@@ -1,12 +1,12 @@
-name: CI-tests
+name: Commit-tests
 on:
   push:
-    branch:
+    branches:
       - main
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
-  commit-tests:
+  ci-tests:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
