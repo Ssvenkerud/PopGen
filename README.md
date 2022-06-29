@@ -1,4 +1,4 @@
-# Population generator
+# PopGen - Population generator
 
 ## Introduction
 This project was born for the need to create synthetic populations for another project.
