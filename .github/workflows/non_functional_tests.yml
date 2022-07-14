@@ -1,10 +1,9 @@
 name: Non-functional-tests
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    types: [opened, synchronize, reopened]
+  workflow_run:
+    workflows: ["Acceptance-tests"]
+    types:
+      - completed
 jobs:
   ci-tests:
     runs-on: ubuntu-latest
