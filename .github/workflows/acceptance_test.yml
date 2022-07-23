@@ -19,8 +19,8 @@ jobs:
         uses: Ssvenkerud/robotframework-docker-action@v1.0
         env:
           BROWSER: chrome
-          ROBOT_TESTS_DIR: ${{ github.workspace }}/tests/acceptance_tests
-          ROBOT_REPORTS_DIR: ${{ github.workspace }}/reports
+          ROBOT_TESTS_DIR: /tests/acceptance_tests
+          ROBOT_REPORTS_DIR: /reports
       - name: Upload test results
         uses: actions/upload-artifact@v1
         if: always()
