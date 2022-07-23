@@ -19,6 +19,7 @@ sphinx = "*"
 sphinx-autodoc-defaultargs = "*"
 sphinx-autodoc-typehints = "*"
 sphinx-rtd-theme = "*"
+robot-framework = "*"
 
 [requires]
 python_version = "3.10"
