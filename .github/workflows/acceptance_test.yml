@@ -17,9 +17,9 @@ jobs:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: acceptance-tests
         uses: joonvena/robotframework-docker-action@v1.0
-        env:
+        with:
           BROWSER: chrome
-          ROBOT_TESTS_DIR: ${{ github.workspace }}/tests/Tests/
+          ROBOT_TESTS_DIR: /home/runner/work/PopGen/PopGen/tests/acceptance_tests
           ROBOT_REPORTS_DIR: ${{ github.workspace }}/reports
       - name: Upload test results
         uses: actions/upload-artifact@v1
