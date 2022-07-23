@@ -22,8 +22,20 @@ jobs:
           robot_tests_dir: tests/acceptance_tests
           robot_reports_dir: reports
       - name: Upload test results
-        uses: actions/upload-artifact@v1.0
+        uses: actions/upload-artifact@v1
         if: always()
         with:
           name: reports
           path: ${{ github.workspace }}/reports
+  generate_report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Download reports
+        uses: actions/download-artifact@v1
+        with:
+          name: reports
+      - name: Send report to commit
+        uses: joonvena/robotframework-reporter-action@v2
+        with:
+          gh_access_token: ${{ secrets.GITHUB_TOKEN }}
