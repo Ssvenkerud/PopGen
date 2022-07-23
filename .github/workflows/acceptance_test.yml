@@ -41,5 +41,5 @@ jobs:
         run: pipenv run pip list
 
       - name: acceptance-tests
-        run: robot tests/acceptance_test/dummy_test.robot
+        run: python -m robot tests/acceptance_test/dummy_test.robot
 
