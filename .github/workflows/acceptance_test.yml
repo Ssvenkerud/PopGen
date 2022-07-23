@@ -22,7 +22,7 @@ jobs:
           robot_tests_dir: tests/acceptance_tests
           robot_reports_dir: reports
       - name: Upload test results
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v1.0
         if: always()
         with:
           name: reports
