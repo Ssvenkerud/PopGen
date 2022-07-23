@@ -16,7 +16,7 @@ jobs:
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: acceptance-tests
-        uses: Ssvenkerud/robotframework-docker-action@6c37a9e6108e2971f2002065c9a3dc1dce09572e
+        uses: Ssvenkerud/robotframework-docker-action@a16e2b3da3d1e3bf89e663ed145c6d6d63a89748
         env:
           browser: chrome
           robot_tests_dir: PopGen/PopGen/tests/acceptance_tests
