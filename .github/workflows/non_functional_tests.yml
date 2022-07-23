@@ -17,7 +17,7 @@ jobs:
         uses: joonvena/robotframework-docker-action@v1.0
         with:
           browser: chrome
-          robot_tests_dir: tests/non-functional-tests
+          robot_tests_dir: tests/non_functional_tests
           robot_reports_dir: reports
       - name: Upload test results
         uses: actions/upload-artifact@v1
