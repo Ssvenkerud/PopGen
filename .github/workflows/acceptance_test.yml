@@ -11,4 +11,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: acceptance-tests
-        run: echo "this is a dummy end point"
+        run: robot tests/acceptance_test/dummy_test.robot
+
