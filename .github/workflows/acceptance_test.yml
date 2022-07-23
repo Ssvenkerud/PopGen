@@ -30,7 +30,7 @@ jobs:
 
   generate_report:
     if: always()
-    needs: [ test ]
+    needs: [ acceptance-tests ]
     runs-on: ubuntu-latest
     steps:
       - name: Download reports
