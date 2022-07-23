@@ -5,6 +5,6 @@
 | ${MESSAGE}         | Hello, i am robo!
 
 | *** Test Cases *** |                 |                   |
-| My Test            | [Documentation] | Example robo test |
+| NFC test 1         | [Documentation] | Example robo test |
 |                    | Log             | ${MESSAGE}        |
-| Another Test       | Should Be Equal | ${MESSAGE}        | Hello, i am robo!
+| NCF test 2         | Should Be Equal | ${MESSAGE}        | Hello, i am robo!

@@ -5,10 +5,37 @@ on:
     types:
       - completed
 jobs:
-  ci-tests:
+  non-functional-tests:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
-      - name: non-functional-tests
-        run: echo "this is a dummy end point"
-
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: acceptance-tests
+        uses: joonvena/robotframework-docker-action@v1.0
+        with:
+          browser: chrome
+          robot_tests_dir: tests/non-functional-tests
+          robot_reports_dir: reports
+      - name: Upload test results
+        uses: actions/upload-artifact@v1
+        if: always()
+        with:
+          name: reports
+          path: ${{ github.workspace }}/reports
+  generate_report:
+    if: always()
+    needs: [ non-functional-tests ]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Download reports
+        uses: actions/download-artifact@v1
+        with:
+          name: reports
+      - name: Send report to commit
+        uses: joonvena/robotframework-reporter-action@v2
+        with:
+          gh_access_token: ${{ secrets.GITHUB_TOKEN }}

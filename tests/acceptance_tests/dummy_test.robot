@@ -5,6 +5,6 @@
 | ${MESSAGE}         | Hello, i am robo!
 
 | *** Test Cases *** |                 |                   |
-| My Test            | [Documentation] | Example robo test |
+| accseptance test 1 | [Documentation] | Example robo test |
 |                    | Log             | ${MESSAGE}        |
-| Another Test       | Should Be Equal | ${MESSAGE}        | Hello, i am robo!
+| accseptance test 2 | Should Be Equal | ${MESSAGE}        | Hello, i am robo!
