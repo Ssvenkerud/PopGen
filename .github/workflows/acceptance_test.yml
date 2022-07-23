@@ -19,8 +19,8 @@ jobs:
         uses: Ssvenkerud/robotframework-docker-action@a16e2b3da3d1e3bf89e663ed145c6d6d63a89748
         with:
           browser: chrome
-          robot_tests_dir: PopGen/PopGen/tests/acceptance_tests
-          robot_reports_dir: PopGen/PopGen/reports
+          robot_tests_dir: tests/acceptance_tests
+          robot_reports_dir: /reports
       - name: Upload test results
         uses: actions/upload-artifact@v1
         if: always()
