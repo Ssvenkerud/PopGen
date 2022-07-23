@@ -7,6 +7,7 @@ on:
 jobs:
   ci-tests:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: publish image
         run: echo "this is a dummy end point"
