@@ -1,0 +1,27 @@
+{
+  "filename": "simple_test-data",
+  "n_observations": 5,
+  "seed": 48568,
+  "schema_type":"simple",
+  "schema" : {
+    "id": ["id"],
+    "integer": [
+      "int",
+      1,
+      10
+    ],
+    "float": [
+      "float",
+      0.1,
+      100
+    ],
+    "categorical": [
+      "cat",
+      [
+        "apple",
+        "pear",
+        "dogs"
+      ]
+    ]
+  }
+}
