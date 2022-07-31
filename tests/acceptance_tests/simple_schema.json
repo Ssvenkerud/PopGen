@@ -1,8 +1,9 @@
 {
-  "filename": "simple_test-data",
+  "filename": "simple_test_data",
+  "fileformat": "csv",
   "n_observations": 5,
-  "seed": 48568,
   "schema_type":"simple",
+  "seed": 48568,
   "schema" : {
     "id": ["id"],
     "integer": [
