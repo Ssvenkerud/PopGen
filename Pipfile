@@ -10,7 +10,7 @@ toml = "*"
 robotframework = "*"
 
 [dev-packages]
-black = "==21.9b0"  # need to pin the version because of prerelease
+black = "==24.3.0"  # need to pin the version because of prerelease
 isort = "*"
 pytest = "*"
 pytest-cov = "*"
