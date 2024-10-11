@@ -1,0 +1,8 @@
+PopGen
+======
+
+.. toctree::
+   :maxdepth: 4
+
+   main
+   src
